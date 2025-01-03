@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -16,9 +16,9 @@ export class AppController {
     return this.appService.getHelloWorld();
   }
 
-  @Post("/hello")
-  postHello(){
-    return this.appService.sayWelcomeToTheUser();
+  @Post("/hello/:name/:age/:nationality")
+  postHello(@Param() params : object){
+    return params;
   }
 
 }
