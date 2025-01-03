@@ -9,4 +9,7 @@ export class AppService {
   getHelloWorld(): string {
     return "Special Hello World";
   }
+  sayWelcomeToTheUser(): string {
+    return "Welcome to nestjs"
+  }
 }
