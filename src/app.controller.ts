@@ -25,6 +25,9 @@ export class AppController {
           name : "Shoes",
           prix : 203
         }
+      },
+      body : {
+        body : req.body
       }
     })
   }
