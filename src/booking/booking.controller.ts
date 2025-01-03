@@ -1,7 +1,12 @@
 /* eslint-disable prettier/prettier */
-import { Controller } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
 
 @Controller('booking')
 export class BookingController {
-    
+
+    @Post("/reserve")
+    reserve() {
+        return 'reserve';
+    }
+
 }
