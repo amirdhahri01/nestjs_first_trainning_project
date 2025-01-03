@@ -10,4 +10,5 @@ import { BookingService } from './booking/booking.service';
   controllers: [AppController, BookingController],
   providers: [AppService, BookingService],
 })
-export class AppModule {}
+
+export class AppModule { }
