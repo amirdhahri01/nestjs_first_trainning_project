@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req, Res} from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -16,9 +16,17 @@ export class AppController {
     return this.appService.getHelloWorld();
   }
 
-  @Post("/hello/:name/:age/:nationality")
-  postHello(@Param() params : object){
-    return params;
+  @Post("/hello")
+  postHello(@Body() body : object , @Req() req , @Res() res){
+    res.status(201).send({
+      status : "Product created successfully",
+      datat : {
+        product :{
+          name : "Shoes",
+          prix : 203
+        }
+      }
+    })
   }
 
 }
